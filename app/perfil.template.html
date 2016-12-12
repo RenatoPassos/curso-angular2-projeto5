@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+    <h2>Listagem de perfis</h2>
+    <table class="table table-hover table-striped">
+       <tr>
+          <th>
+              Nome
+          </th>
+       </tr>
+       <tr *ngFor="let perfil of perfis">
+          <th>
+              {{perfil.nome}}
+          </th>
+       </tr>
+    </table>

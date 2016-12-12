@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+    <h2>Listagem de usuários</h2>
+    <p *ngIf="errorMessage"><b>Msg erro:</b>&nbsp; <span style="color:red;">{{errorMessage}}</span></p>
+    <p>&nbsp;</p>
+    <div class="form-group col-md-4">
+        <label>Id</label>
+        <input class="form-control" [(ngModel)]="usuarioObject._id"   />
+    </div>
+    <div class="form-group col-md-4">
+        <label>Nome</label>
+        <input class="form-control" [(ngModel)]="usuarioObject.nome"   />
+    </div>
+    <div class="form-group col-md-4">
+        <label>Idade</label>
+        <input class="form-control" [(ngModel)]="usuarioObject.idade"   />
+    </div>
+    <div *ngIf="!edit" class="form-group col-md-3">
+        <button class="btn btn-primary" (click)="salvarUsuario(usuarioObject)">Salvar</button>
+    </div>
+    <div *ngIf="edit" class="form-group col-md-3">
+        <button class="btn btn-primary" (click)="editarUsuario(usuarioObject, true)">Editar</button>
+    </div>
+    <table class="table table-hover table-striped">
+       <tr>
+          <th>
+              Id
+          </th>
+          <th>
+              Nome
+          </th>
+          <th>
+              Idade
+          </th>
+          <th>
+
+          </th>
+          <th>
+
+          </th>
+       </tr>
+       <tr *ngFor="let usuario of usuarios; let i = index">
+          <td>
+              {{usuario._id}}
+          </td>
+          <td>
+              {{usuario.nome}}
+          </td>
+          <td>
+              {{usuario.idade}}
+          </td>
+          <td>
+              <button class="btn btn-primary" (click)=editarUsuario(usuario)>Editar</button>
+          </td>
+          <td>
+              <button class="btn btn-danger" (click)=deletarUsuario(i)>Deletar</button>
+          </td>
+       </tr>
+    </table>
