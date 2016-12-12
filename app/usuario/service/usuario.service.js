@@ -13,11 +13,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 //import { USUARIOS } from '../mock/mock.usuarios';
 //adicione as linhas abaixo:
-var http_1 = require('@angular/http');
-var Observable_1 = require('rxjs/Observable');
+var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 var UsuarioService = (function () {
     //adicione o construtor da classe
     function UsuarioService(http) {
@@ -45,11 +45,11 @@ var UsuarioService = (function () {
         console.error(errMsg);
         return Observable_1.Observable.throw(errMsg);
     };
-    UsuarioService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], UsuarioService);
     return UsuarioService;
 }());
+UsuarioService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], UsuarioService);
 exports.UsuarioService = UsuarioService;
 //# sourceMappingURL=usuario.service.js.map
