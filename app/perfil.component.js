@@ -13,7 +13,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var PERFIS = [
     { nome: 'João' },
     { nome: 'Maria' },
@@ -33,14 +33,14 @@ var PerfilComponent = (function () {
     PerfilComponent.prototype.listar = function () {
         return PERFIS;
     };
-    PerfilComponent = __decorate([
-        core_1.Component({
-            selector: 'perfil',
-            templateUrl: "app/perfil.template.html"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], PerfilComponent);
     return PerfilComponent;
 }());
+PerfilComponent = __decorate([
+    core_1.Component({
+        selector: 'perfil',
+        templateUrl: "app/perfil.template.html"
+    }),
+    __metadata("design:paramtypes", [])
+], PerfilComponent);
 exports.PerfilComponent = PerfilComponent;
 //# sourceMappingURL=perfil.component.js.map

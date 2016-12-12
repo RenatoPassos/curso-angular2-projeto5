@@ -13,9 +13,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var core_1 = require('@angular/core');
-var usuario_1 = require('../class/usuario');
-var usuario_service_1 = require('../service/usuario.service');
+var core_1 = require("@angular/core");
+var usuario_1 = require("../class/usuario");
+var usuario_service_1 = require("../service/usuario.service");
 var UsuarioComponent = (function () {
     function UsuarioComponent(usuarioService) {
         this.usuarioService = usuarioService;
@@ -49,15 +49,15 @@ var UsuarioComponent = (function () {
             this.edit = false;
         }
     };
-    UsuarioComponent = __decorate([
-        core_1.Component({
-            providers: [usuario_service_1.UsuarioService],
-            selector: 'usuario',
-            templateUrl: "app/usuario/template/usuario.template.html"
-        }), 
-        __metadata('design:paramtypes', [usuario_service_1.UsuarioService])
-    ], UsuarioComponent);
     return UsuarioComponent;
 }());
+UsuarioComponent = __decorate([
+    core_1.Component({
+        providers: [usuario_service_1.UsuarioService],
+        selector: 'usuario',
+        templateUrl: "app/usuario/template/usuario.template.html"
+    }),
+    __metadata("design:paramtypes", [usuario_service_1.UsuarioService])
+], UsuarioComponent);
 exports.UsuarioComponent = UsuarioComponent;
 //# sourceMappingURL=usuario.component.js.map

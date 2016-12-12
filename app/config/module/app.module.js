@@ -8,34 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
 //adicione essa linha
-var http_1 = require('@angular/http');
-var app_component_1 = require('./../../component/app.component');
-var usuario_component_1 = require('./../../usuario/component/usuario.component');
-var usuario_service_1 = require('../../usuario/service/usuario.service');
-var perfil_component_1 = require('./../../perfil.component');
-var aluno_component_1 = require('./../../aluno.component');
+var http_1 = require("@angular/http");
+var app_component_1 = require("./../../component/app.component");
+var usuario_component_1 = require("./../../usuario/component/usuario.component");
+var usuario_service_1 = require("../../usuario/service/usuario.service");
+var perfil_component_1 = require("./../../perfil.component");
+var aluno_component_1 = require("./../../aluno.component");
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                http_1.HttpModule],
-            declarations: [app_component_1.AppComponent,
-                usuario_component_1.UsuarioComponent,
-                perfil_component_1.PerfilComponent,
-                aluno_component_1.AlunoComponent],
-            providers: [usuario_service_1.UsuarioService],
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule],
+        declarations: [app_component_1.AppComponent,
+            usuario_component_1.UsuarioComponent,
+            perfil_component_1.PerfilComponent,
+            aluno_component_1.AlunoComponent],
+        providers: [usuario_service_1.UsuarioService],
+        bootstrap: [app_component_1.AppComponent]
+    }),
+    __metadata("design:paramtypes", [])
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

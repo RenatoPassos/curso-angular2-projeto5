@@ -13,8 +13,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var core_1 = require('@angular/core');
-var aluno_1 = require('./aluno');
+var core_1 = require("@angular/core");
+var aluno_1 = require("./aluno");
 var ALUNOS = [];
 var AlunoComponent = (function () {
     function AlunoComponent() {
@@ -41,14 +41,14 @@ var AlunoComponent = (function () {
     AlunoComponent.prototype.excluir = function (indice) {
         this.alunos.splice(indice, 1);
     };
-    AlunoComponent = __decorate([
-        core_1.Component({
-            selector: 'aluno',
-            templateUrl: 'app/aluno.template.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AlunoComponent);
     return AlunoComponent;
 }());
+AlunoComponent = __decorate([
+    core_1.Component({
+        selector: 'aluno',
+        templateUrl: 'app/aluno.template.html'
+    }),
+    __metadata("design:paramtypes", [])
+], AlunoComponent);
 exports.AlunoComponent = AlunoComponent;
 //# sourceMappingURL=aluno.component.js.map
