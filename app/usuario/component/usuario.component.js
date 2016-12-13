@@ -20,6 +20,11 @@ var UsuarioComponent = (function () {
     function UsuarioComponent(usuarioService) {
         this.usuarioService = usuarioService;
         this.usuarioObject = new usuario_1.Usuario();
+        this.perfis = [
+            { nome: 'Administrador' },
+            { nome: 'Oreia' },
+            { nome: 'Professor' }
+        ];
         this.edit = false;
     }
     UsuarioComponent.prototype.ngOnInit = function () {
@@ -38,16 +43,19 @@ var UsuarioComponent = (function () {
     };
     UsuarioComponent.prototype.salvarUsuario = function (usuario) {
         this.usuarios.push(usuario);
-        this.usuarioObject = new usuario_1.Usuario();
+        this.initUsuario();
     };
     UsuarioComponent.prototype.editarUsuario = function (usuario, persistir) {
         if (persistir === void 0) { persistir = false; }
         this.edit = true;
         this.usuarioObject = usuario;
         if (persistir) {
-            this.usuarioObject = new usuario_1.Usuario();
+            this.initUsuario();
             this.edit = false;
         }
+    };
+    UsuarioComponent.prototype.initUsuario = function () {
+        this.usuarioObject = new usuario_1.Usuario();
     };
     return UsuarioComponent;
 }());

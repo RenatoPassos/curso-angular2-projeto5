@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioInterface } from './usuario.interface';
 import { Usuario } from '../class/usuario';
 import { UsuarioService } from '../service/usuario.service';
+import {Perfil} from "../../perfil";
 
 @Component({
   providers: [UsuarioService],
@@ -16,6 +17,11 @@ import { UsuarioService } from '../service/usuario.service';
 export class UsuarioComponent implements UsuarioInterface, OnInit { 
     usuarios: Usuario[];
     usuarioObject = new Usuario();
+    perfis: Perfil[] = [
+        {nome: 'Administrador'}
+        , {nome: 'Oreia'}
+        , {nome: 'Professor'}
+    ];
     edit = false;
     errorMessage: string;
     
@@ -40,15 +46,21 @@ export class UsuarioComponent implements UsuarioInterface, OnInit {
     }
     salvarUsuario(usuario): void {
         this.usuarios.push(usuario);
-        this.usuarioObject = new Usuario();
+        this.initUsuario();
     }
+
+
     editarUsuario(usuario, persistir = false): void {
         this.edit = true;
         this.usuarioObject = usuario;
         if (persistir) {
-            this.usuarioObject = new Usuario();
+            this.initUsuario();
             this.edit = false;
         }
+    }
+
+    private initUsuario() {
+        this.usuarioObject = new Usuario();
     }
 }
 
