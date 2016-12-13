@@ -3,7 +3,7 @@
 
 # Dependências do projeto (libraries)
 /node_modules/
-
+ 
 # Arquivos de Log
 npm-debug.log
 
