@@ -14,33 +14,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * and open the template in the editor.
  */
 var core_1 = require("@angular/core");
-var PERFIS = [
-    { nome: 'João' },
-    { nome: 'Maria' },
-    { nome: 'Joana' },
-    { nome: 'José' },
-    { nome: 'Magneta' },
-    { nome: 'RubberMan' },
-    { nome: 'Dynama' },
-    { nome: 'Dr IQ' },
-    { nome: 'Nataniel' },
-    { nome: 'Jéssica' }
-];
+var perfil_service_1 = require("../service/perfil.service");
 var PerfilComponent = (function () {
-    function PerfilComponent() {
-        this.perfis = this.listar();
+    function PerfilComponent(perfilService) {
+        this.perfilService = perfilService;
     }
+    PerfilComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.perfilService.getList().then(function (perfis) { return _this.perfis = perfis; });
+    };
     PerfilComponent.prototype.listar = function () {
-        return PERFIS;
+        return this.perfis;
     };
     return PerfilComponent;
 }());
 PerfilComponent = __decorate([
     core_1.Component({
+        providers: [perfil_service_1.PerfilService],
         selector: 'perfil',
-        templateUrl: "app/perfil.template.html"
+        templateUrl: "app/perfil/template/perfil.template.html"
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [perfil_service_1.PerfilService])
 ], PerfilComponent);
 exports.PerfilComponent = PerfilComponent;
 //# sourceMappingURL=perfil.component.js.map

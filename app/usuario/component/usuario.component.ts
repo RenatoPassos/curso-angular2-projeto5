@@ -7,30 +7,36 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioInterface } from './usuario.interface';
 import { Usuario } from '../class/usuario';
 import { UsuarioService } from '../service/usuario.service';
+import {Perfil} from "../../perfil/class/perfil";
+import {PerfilService} from "../../perfil/service/perfil.service";
 
 @Component({
-  providers: [UsuarioService],
+  providers: [UsuarioService, PerfilService],
   selector: 'usuario',
   templateUrl: "app/usuario/template/usuario.template.html"
 })
 export class UsuarioComponent implements UsuarioInterface, OnInit { 
     usuarios: Usuario[];
     usuarioObject = new Usuario();
+    perfis: Perfil[];
     edit = false;
     errorMessage: string;
-    
-    constructor(private usuarioService: UsuarioService) {  }
+
+    constructor(private usuarioService: UsuarioService,
+                private perfilService: PerfilService) {  }
     
     ngOnInit(): void {
-        this.usuarioService.getListUsuario()
+        this.usuarioService.getList()
             .subscribe(
-                usuarios => this.usuarios = usuarios,
+                result => this.usuarios = result,
                 error => this.errorMessage = <any>error);
+        this.perfilService.getList().then(result => this.perfis = result);
     }
-            
-//    ngOnInit(): void {
-//        this.usuarioService.getListUsuario().then(usuarios => this.usuarios = usuarios);
-//    }    
+
+    // ngOnInit(): void {
+    //     this.usuarioService.getList().then(result => this.usuarios = result);
+    //     this.perfilService.getList().then(result => this.perfis = result);
+    // }
         
     listarUsuarios(): Usuario[] {
         return this.usuarios;
@@ -40,15 +46,21 @@ export class UsuarioComponent implements UsuarioInterface, OnInit {
     }
     salvarUsuario(usuario): void {
         this.usuarios.push(usuario);
-        this.usuarioObject = new Usuario();
+        this.initUsuario();
     }
+
+
     editarUsuario(usuario, persistir = false): void {
         this.edit = true;
         this.usuarioObject = usuario;
         if (persistir) {
-            this.usuarioObject = new Usuario();
+            this.initUsuario();
             this.edit = false;
         }
+    }
+
+    private initUsuario() {
+        this.usuarioObject = new Usuario();
     }
 }
 

@@ -8,7 +8,7 @@ import { HttpModule }    from '@angular/http';
 import { AppComponent }   from './../../component/app.component';
 import { UsuarioComponent } from './../../usuario/component/usuario.component';
 import { UsuarioService } from '../../usuario/service/usuario.service';
-import { PerfilComponent } from './../../perfil.component';
+import { PerfilComponent } from '../../perfil/component/perfil.component';
 import { AlunoComponent } from './../../aluno.component';
 
 @NgModule({
