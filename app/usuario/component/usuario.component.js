@@ -16,25 +16,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var usuario_1 = require("../class/usuario");
 var usuario_service_1 = require("../service/usuario.service");
+var perfil_service_1 = require("../../perfil/service/perfil.service");
 var UsuarioComponent = (function () {
-    function UsuarioComponent(usuarioService) {
+    function UsuarioComponent(usuarioService, perfilService) {
         this.usuarioService = usuarioService;
+        this.perfilService = perfilService;
         this.usuarioObject = new usuario_1.Usuario();
-        this.perfis = [
-            { nome: 'Administrador' },
-            { nome: 'Oreia' },
-            { nome: 'Professor' }
-        ];
         this.edit = false;
     }
     UsuarioComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.usuarioService.getListUsuario()
-            .subscribe(function (usuarios) { return _this.usuarios = usuarios; }, function (error) { return _this.errorMessage = error; });
+        this.usuarioService.getList()
+            .subscribe(function (result) { return _this.usuarios = result; }, function (error) { return _this.errorMessage = error; });
+        this.perfilService.getList().then(function (result) { return _this.perfis = result; });
     };
-    //    ngOnInit(): void {
-    //        this.usuarioService.getListUsuario().then(usuarios => this.usuarios = usuarios);
-    //    }    
+    // ngOnInit(): void {
+    //     this.usuarioService.getList().then(result => this.usuarios = result);
+    //     this.perfilService.getList().then(result => this.perfis = result);
+    // }
     UsuarioComponent.prototype.listarUsuarios = function () {
         return this.usuarios;
     };
@@ -61,11 +60,12 @@ var UsuarioComponent = (function () {
 }());
 UsuarioComponent = __decorate([
     core_1.Component({
-        providers: [usuario_service_1.UsuarioService],
+        providers: [usuario_service_1.UsuarioService, perfil_service_1.PerfilService],
         selector: 'usuario',
         templateUrl: "app/usuario/template/usuario.template.html"
     }),
-    __metadata("design:paramtypes", [usuario_service_1.UsuarioService])
+    __metadata("design:paramtypes", [usuario_service_1.UsuarioService,
+        perfil_service_1.PerfilService])
 ], UsuarioComponent);
 exports.UsuarioComponent = UsuarioComponent;
 //# sourceMappingURL=usuario.component.js.map

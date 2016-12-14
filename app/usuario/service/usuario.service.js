@@ -14,7 +14,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * and open the template in the editor.
  */
 var core_1 = require("@angular/core");
-//import { USUARIOS } from '../mock/mock.usuarios';
 //adicione as linhas abaixo:
 var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
@@ -23,14 +22,22 @@ var UsuarioService = (function () {
     function UsuarioService(http) {
         this.http = http;
         //adicione esta linha:
-        this.usuarioUrl = 'https://cursoangularjs2restful.herokuapp.com/usuario';
+        //private usuarioUrl = 'https://cursoangularjs2restful.herokuapp.com/usuario';
+        this.usuarioUrl = 'https://natanieltse.herokuapp.com/usuario';
     }
-    UsuarioService.prototype.getListUsuario = function () {
+    /**
+     *
+     * @returns {Observable<Usuario[]>}
+     */
+    UsuarioService.prototype.getList = function () {
         //adicione esse trecho de código
         return this.http.get(this.usuarioUrl)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
+    // getList(): Promise<Usuario[]> {
+    //     return Promise.resolve(USUARIOS);
+    // }
     //Crie esse método
     UsuarioService.prototype.handleError = function (error) {
         var errMsg;

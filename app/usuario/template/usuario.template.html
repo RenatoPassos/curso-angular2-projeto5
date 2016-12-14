@@ -7,7 +7,12 @@ and open the template in the editor.
     <h2>Listagem de usuários</h2>
     <p *ngIf="errorMessage"><b>Msg erro:</b>&nbsp; <span style="color:red;">{{errorMessage}}</span></p>
     <p>&nbsp;</p>
-    <p ><b>Perfis:</b>&nbsp; {{perfis}}</p>
+    <p><b>Perfis:</b>&nbsp; </p>
+    <ul>
+        <li *ngFor="let perfil of perfis">
+            {{perfil.nome}}
+        </li>
+    </ul>
     <p>&nbsp;</p>
     <div class="form-group col-md-4">
         <label>Id</label>
@@ -39,6 +44,9 @@ and open the template in the editor.
               Idade
           </th>
           <th>
+              Perfil
+          </th>
+          <th>
 
           </th>
           <th>
@@ -55,6 +63,9 @@ and open the template in the editor.
           <td>
               {{usuario.idade}}
           </td>
+           <td>
+               {{usuario.perfil.nome}}
+           </td>
           <td>
               <button class="btn btn-primary" (click)=editarUsuario(usuario)>Editar</button>
           </td>

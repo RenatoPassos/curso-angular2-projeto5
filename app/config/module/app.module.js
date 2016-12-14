@@ -16,7 +16,7 @@ var http_1 = require("@angular/http");
 var app_component_1 = require("./../../component/app.component");
 var usuario_component_1 = require("./../../usuario/component/usuario.component");
 var usuario_service_1 = require("../../usuario/service/usuario.service");
-var perfil_component_1 = require("./../../perfil.component");
+var perfil_component_1 = require("../../perfil/component/perfil.component");
 var aluno_component_1 = require("./../../aluno.component");
 var AppModule = (function () {
     function AppModule() {

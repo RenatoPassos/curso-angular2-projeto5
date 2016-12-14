@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */ 
-import {Perfil} from "../../perfil";
+import {Perfil} from "../../perfil/class/perfil";
 
 export class Usuario {
     _id: number;
