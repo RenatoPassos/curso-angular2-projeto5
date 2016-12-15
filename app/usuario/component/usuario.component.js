@@ -38,9 +38,12 @@ var UsuarioComponent = (function () {
     UsuarioComponent.prototype.listar = function () {
         return this.usuarios;
     };
-    UsuarioComponent.prototype.excluir = function (index) {
-        this.usuarios.splice(index, 1);
+    UsuarioComponent.prototype.excluir = function (id) {
+        //this.usuarios.splice(id, 1);
     };
+    // excluir(index: number): void {
+    //     this.usuarios.splice(index, 1);
+    // }
     UsuarioComponent.prototype.salvar = function (usuario) {
         this.usuarios.push(usuario);
         this.initUsuario();

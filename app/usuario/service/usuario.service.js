@@ -14,14 +14,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * and open the template in the editor.
  */
 var core_1 = require("@angular/core");
-//adicione as linhas abaixo:
 var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
 var UsuarioService = (function () {
-    //adicione o construtor da classe
     function UsuarioService(http) {
         this.http = http;
-        //adicione esta linha:
         //private usuarioUrl = 'https://cursoangularjs2restful.herokuapp.com/usuario';
         this.usuarioUrl = 'https://natanieltse.herokuapp.com/usuario';
     }
@@ -30,7 +27,6 @@ var UsuarioService = (function () {
      * @returns {Observable<Usuario[]>}
      */
     UsuarioService.prototype.getList = function () {
-        //adicione esse trecho de código
         return this.http.get(this.usuarioUrl)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
@@ -38,7 +34,6 @@ var UsuarioService = (function () {
     // getList(): Promise<Usuario[]> {
     //     return Promise.resolve(USUARIOS);
     // }
-    //Crie esse método
     UsuarioService.prototype.handleError = function (error) {
         var errMsg;
         if (error instanceof http_1.Response) {

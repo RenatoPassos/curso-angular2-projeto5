@@ -7,7 +7,7 @@ import { Usuario } from './../class/usuario';
  
 export interface UsuarioInterface {
     listar(): Usuario[];
-    excluir(index: number): void;
+    excluir(id: string): void;
     salvar(usuario: Usuario): void;
     editar(usuario: Usuario, persistir: boolean): void;
 }

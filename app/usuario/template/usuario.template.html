@@ -7,7 +7,7 @@ and open the template in the editor.
     <h2>Listagem de usuários</h2>
     <p *ngIf="errorMessage"><b>Msg erro:</b>&nbsp; <span style="color:red;">{{errorMessage}}</span></p>
     <p>&nbsp;</p>
-    <p><b>Perfis:</b>&nbsp; </p>
+    <p><b>Perfis existentes:</b>&nbsp; </p>
     <ul>
         <li *ngFor="let perfil of perfis">
             {{perfil.nome}}
@@ -15,17 +15,18 @@ and open the template in the editor.
     </ul>
     <p>&nbsp;</p>
     <div class="form-group col-md-4">
-        <label>Id</label>
-        <input class="form-control" [(ngModel)]="usuarioObject._id"   />
+        <label for="id">Id</label>
+        <input id="id" class="form-control" [(ngModel)]="usuarioObject._id" type="text"/>
     </div>
     <div class="form-group col-md-4">
         <label>Nome</label>
-        <input class="form-control" [(ngModel)]="usuarioObject.nome"   />
+        <input title="Nome" class="form-control" [(ngModel)]="usuarioObject.nome" type="text"/>
     </div>
     <div class="form-group col-md-4">
         <label>Idade</label>
         <input class="form-control" [(ngModel)]="usuarioObject.idade"   />
     </div>
+
     <div *ngIf="!edit" class="form-group col-md-3">
         <button class="btn btn-primary" (click)="salvar(usuarioObject)">Salvar</button>
     </div>
@@ -70,7 +71,7 @@ and open the template in the editor.
               <button class="btn btn-primary" (click)="editar(usuario)">Editar</button>
           </td>
           <td>
-              <button class="btn btn-danger" (click)="excluir(i)">Deletar</button>
+              <button class="btn btn-danger" (click)="excluir(usuario._id)">Deletar</button>
           </td>
        </tr>
     </table>

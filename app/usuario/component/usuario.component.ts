@@ -42,10 +42,15 @@ export class UsuarioComponent implements UsuarioInterface, OnInit {
         
     listar(): Usuario[] {
         return this.usuarios;
-    }    
-    excluir(index): void {
-        this.usuarios.splice(index, 1);
     }
+
+    excluir(id: string): void {
+        //this.usuarios.splice(id, 1);
+    }
+    // excluir(index: number): void {
+    //     this.usuarios.splice(index, 1);
+    // }
+
     salvar(usuario): void {
         this.usuarios.push(usuario);
         this.initUsuario();
