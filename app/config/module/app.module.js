@@ -11,13 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
-//adicione essa linha
 var http_1 = require("@angular/http");
-var app_component_1 = require("./../../component/app.component");
-var usuario_component_1 = require("./../../usuario/component/usuario.component");
+var app_component_1 = require("../../component/app.component");
+var home_component_1 = require("../../home/component/home.component");
+var usuario_component_1 = require("../../usuario/component/usuario.component");
 var usuario_service_1 = require("../../usuario/service/usuario.service");
 var perfil_component_1 = require("../../perfil/component/perfil.component");
-var aluno_component_1 = require("./../../aluno.component");
+var aluno_component_1 = require("../../aluno/aluno.component");
+var perfil_service_1 = require("../../perfil/service/perfil.service");
+var routes_1 = require("../routes/routes");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,12 +29,17 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            http_1.HttpModule],
+            http_1.HttpModule,
+            routes_1.routing
+        ],
         declarations: [app_component_1.AppComponent,
+            home_component_1.HomeComponent,
             usuario_component_1.UsuarioComponent,
             perfil_component_1.PerfilComponent,
+            //PerfilComponentForm,
             aluno_component_1.AlunoComponent],
-        providers: [usuario_service_1.UsuarioService],
+        providers: [usuario_service_1.UsuarioService,
+            perfil_service_1.PerfilService],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

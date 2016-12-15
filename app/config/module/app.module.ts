@@ -1,25 +1,30 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
-//adicione essa linha
 import { HttpModule }    from '@angular/http';
-
-import { AppComponent }   from './../../component/app.component';
-import { UsuarioComponent } from './../../usuario/component/usuario.component';
+import { AppComponent }   from '../../component/app.component';
+import {HomeComponent} from "../../home/component/home.component";
+import { UsuarioComponent } from '../../usuario/component/usuario.component';
 import { UsuarioService } from '../../usuario/service/usuario.service';
 import { PerfilComponent } from '../../perfil/component/perfil.component';
-import { AlunoComponent } from './../../aluno.component';
+import { AlunoComponent } from '../../aluno/aluno.component';
+import {PerfilService} from "../../perfil/service/perfil.service";
+import {routing} from "../routes/routes";
 
 @NgModule({
   imports:      [ BrowserModule,
                   FormsModule,
-                  HttpModule ],
+                  HttpModule,
+                  routing
+                ],
   declarations: [ AppComponent,
+                  HomeComponent,
                   UsuarioComponent,
                   PerfilComponent,
+                  //PerfilComponentForm,
                   AlunoComponent ],
-  providers:    [ UsuarioService ],
+  providers:    [ UsuarioService,
+                  PerfilService ],
   bootstrap:    [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {  }

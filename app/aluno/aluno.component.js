@@ -46,7 +46,7 @@ var AlunoComponent = (function () {
 AlunoComponent = __decorate([
     core_1.Component({
         selector: 'aluno',
-        templateUrl: 'app/aluno.template.html'
+        templateUrl: 'app/aluno/aluno.template.html'
     }),
     __metadata("design:paramtypes", [])
 ], AlunoComponent);
