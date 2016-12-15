@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="pt">
   <head>
     <meta charset="UTF-8">
+    <base href="/"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Projeto 5</title>
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -20,11 +16,24 @@ and open the template in the editor.
     <!-- 2. Configuração -->
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app').catch(function(err){ console.error(err); });
+        System.import('app').catch(function (err) {
+            console.error(err);
+        });
     </script>
   </head>
-
   <body>
-    <projeto5>Carregando...</projeto5>
+    <projeto5>
+        <!--  SVG Stopwatch by Chris Gannon - Dribbble
+          ( *vide https://dribbble.com/shots/2195501-SVG-Stopwatch
+            *vide http://codepen.io/chrisgannon/pen/jPOWpe ) -->
+        <img class="col-md-8"
+             src="assets/img/svg_stopwatch_dribbble.gif"
+             alt="Carregando..."/>
+        <!-- Stopwatch Preloader (GIF) by Mantas Bačiuška - Dribbble
+              (https://dribbble.com/shots/1155621-Stopwatch-Preloader-GIF): -->
+        <!-- <img class="col-md-8"
+             src="assets/img/stopwatch-gif-preloader.gif"
+             alt="Carregando..."/> -->
+    </projeto5>
   </body>
 </html>
