@@ -13,7 +13,7 @@ const ALUNOS: Aluno[] = [
 
 @Component({
     selector: 'aluno',
-    templateUrl: 'app/aluno.template.html'
+    templateUrl: 'app/aluno/aluno.template.html'
 })
 export class AlunoComponent implements AlunoInterface {
     alunos = ALUNOS;
