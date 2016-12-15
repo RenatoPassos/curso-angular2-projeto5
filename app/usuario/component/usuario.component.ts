@@ -30,7 +30,9 @@ export class UsuarioComponent implements UsuarioInterface, OnInit {
             .subscribe(
                 result => this.usuarios = result,
                 error => this.errorMessage = <any>error);
-        this.perfilService.getList().then(result => this.perfis = result);
+        this.perfilService.getList()
+            .then(
+                result => this.perfis = result);
     }
 
     // ngOnInit(): void {
@@ -38,19 +40,19 @@ export class UsuarioComponent implements UsuarioInterface, OnInit {
     //     this.perfilService.getList().then(result => this.perfis = result);
     // }
         
-    listarUsuarios(): Usuario[] {
+    listar(): Usuario[] {
         return this.usuarios;
     }    
-    deletarUsuario(index): void {
+    excluir(index): void {
         this.usuarios.splice(index, 1);
     }
-    salvarUsuario(usuario): void {
+    salvar(usuario): void {
         this.usuarios.push(usuario);
         this.initUsuario();
     }
 
 
-    editarUsuario(usuario, persistir = false): void {
+    editar(usuario, persistir = false): void {
         this.edit = true;
         this.usuarioObject = usuario;
         if (persistir) {

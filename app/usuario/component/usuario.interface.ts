@@ -6,9 +6,9 @@
 import { Usuario } from './../class/usuario';
  
 export interface UsuarioInterface {
-    listarUsuarios(): Usuario[];
-    deletarUsuario(index): void;
-    salvarUsuario(usuario): void;
-    editarUsuario(usuario, persistir): void;
+    listar(): Usuario[];
+    excluir(index: number): void;
+    salvar(usuario: Usuario): void;
+    editar(usuario: Usuario, persistir: boolean): void;
 }
 

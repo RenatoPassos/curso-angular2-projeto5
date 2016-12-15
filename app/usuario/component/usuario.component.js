@@ -28,23 +28,24 @@ var UsuarioComponent = (function () {
         var _this = this;
         this.usuarioService.getList()
             .subscribe(function (result) { return _this.usuarios = result; }, function (error) { return _this.errorMessage = error; });
-        this.perfilService.getList().then(function (result) { return _this.perfis = result; });
+        this.perfilService.getList()
+            .then(function (result) { return _this.perfis = result; });
     };
     // ngOnInit(): void {
     //     this.usuarioService.getList().then(result => this.usuarios = result);
     //     this.perfilService.getList().then(result => this.perfis = result);
     // }
-    UsuarioComponent.prototype.listarUsuarios = function () {
+    UsuarioComponent.prototype.listar = function () {
         return this.usuarios;
     };
-    UsuarioComponent.prototype.deletarUsuario = function (index) {
+    UsuarioComponent.prototype.excluir = function (index) {
         this.usuarios.splice(index, 1);
     };
-    UsuarioComponent.prototype.salvarUsuario = function (usuario) {
+    UsuarioComponent.prototype.salvar = function (usuario) {
         this.usuarios.push(usuario);
         this.initUsuario();
     };
-    UsuarioComponent.prototype.editarUsuario = function (usuario, persistir) {
+    UsuarioComponent.prototype.editar = function (usuario, persistir) {
         if (persistir === void 0) { persistir = false; }
         this.edit = true;
         this.usuarioObject = usuario;
